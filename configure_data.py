@@ -35,7 +35,7 @@ def make_loaders(opt):
     if opt.eval_seq_length < 0:
         eval_seq_length = eval_seq_length * opt.world_size
     # data_loader_args = {'num_workers': 0, 'shuffle': opt.shuffle, 'batch_size': batch_size,
-    data_loader_args = {'num_workers': 4, 'shuffle': opt.shuffle, 'batch_size': batch_size,
+    data_loader_args = {'num_workers': 0, 'shuffle': opt.shuffle, 'batch_size': batch_size,
     # data_loader_args = {'num_workers': 1, 'shuffle': opt.shuffle, 'batch_size': batch_size,
                     'pin_memory': True, 'transpose': opt.transpose, 'distributed': opt.world_size > 1,
                     'rank': opt.rank, 'world_size': opt.world_size, 'drop_last': opt.world_size > 1}

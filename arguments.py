@@ -10,6 +10,8 @@ from configure_data import configure_data
 
 def add_general_args(parser):
     group = parser.add_argument_group('general', 'general purpose arguments')
+    group.add_argument('--cpu', action='store_true',
+                        help='specify pytorch load device use this if you do not have a gpu')
     group.add_argument('--model', type=str, default='mLSTM',
                         help='type of recurrent net (RNNTanh, RNNReLU, LSTM, mLSTM, GRU)')
     group.add_argument('--lr', type=float, default=5e-4,

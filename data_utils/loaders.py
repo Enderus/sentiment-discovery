@@ -102,6 +102,8 @@ class DataLoader(data.DataLoader):
         self.drop_last = drop_last
         self.timeout = timeout
         self.worker_init_fn = worker_init_fn
+        self.multiprocessing_context=None
+        self._dataset_kind = None
         if timeout < 0:
             raise ValueError('timeout option should be non-negative')
 
