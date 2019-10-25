@@ -1,9 +1,11 @@
 import numpy
 import subprocess
 import os
-
-#Runs the classifier, see arguments.py for more information. The arguments here load the LSTM classifier (link in README.md), uses the corpus: newsentences.csv, runs preprocessing, and runs on the cpu. If you have a gpu in your machine remove the --cpu flag.
+"""
+Runs the classifier, see arguments.py for more information. The arguments here load the LSTM  classifier (link in README.md), uses the corpus: newsentences.csv, runs preprocessing, and runs  on the cpu. If you have a gpu in your machine remove the --cpu flag.
+"""
 subprocess.call("python3.7 run_classifier.py --load mlstm_semeval.clf --data newsentences.csv --text-key sentence --preprocess --cpu", shell=True)
+
 sentiment_prob = numpy.load("clf_results.npy.prob.npy")
 corpus = open("newsentences.csv", 'r').readlines()
 output_emotions = open("concat.txt", "w")
